@@ -18,21 +18,20 @@ app.get('/profile/:username', function (req, res) {
     res.send(`hello from ${req.params.username}`);
 });
 
-// app.listen(port, () => {
-//     console.log(`Server listening at http://localhost:${port}`);
-// });
+app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
+});
 
 
 app.set('view engine', 'ejs');
 
-app.render('/index', function (req, res) {
-    res.send("index", { title: 'Hey title', message: 'Hello there!' });
-});
+app.get("/index", function (req, res) {
+    res.render("index", { name: "ujjwal" })
+})
 
 
 
-
-app.listen(3000); // this is the same as the above line
+// app.listen(3000); // this is the same as the above line
 
 
 
